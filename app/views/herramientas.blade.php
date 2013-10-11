@@ -5,85 +5,44 @@
 		<div id="filtro">
 			<p><img src="imgs/flecha-filtrar.png">Filtrar</p>
 			<ul>
-				<li class="rojo"><a href="">Marketing</a></li>
-				<li class="azul"><a href="">Recursos Humanos</a></li>
-				<li class="verde"><a href="">Finanzas</a></li>
-				<li class="amarillo"><a href="">Tecnología</a></li>
+			@foreach($subcats as $sub)
+				<li class="{{ $sub->colorSub }} active"><a data-id="{{ $sub->id }}">{{ $sub->nomSub }}</a></li>
+			@endforeach
 			</ul>
 		</div>
 		<div class="grid">
+		@foreach($files as $file)
+			@if ($file->tarch_id === '1')
 			<div class="element imagen">
-				<div class="thumb">
-					<a href=""><div class="overlay"></div>
-					<img src="imgs/herramientas-word.png"></a>
-					<div class="iconos">
-						<a href=""><img src="imgs/facebook-icon.png"></a>
-						<a href=""><img src="imgs/twitter-icon.png"></a>
-					</div>
-				</div>
-				<h1>Steve Jobs</h1>
-				<p>Lorem ipsum dolor sit amet henu sohit gambran doisum. </p>
-			</div>
+			@elseif ($file->tarch_id === '2')
 			<div class="element video">
-				<div class="thumb">
-					<a href=""><div class="overlay"></div>
-					<img src="imgs/herramientas-word.png"></a>
-					<div class="iconos">
-						<a href=""><img src="imgs/facebook-icon.png"></a>
-						<a href=""><img src="imgs/twitter-icon.png"></a>
-					</div>
-				</div>
-				<h1>Mentalidad del emprendedor</h1>
-				<p>Lorem ipsum dolor sit amet henu sohit gambran doisum. </p>
-			</div>
+			@elseif ($file->tarch_id === '3')
 			<div class="element descargar">
-				<div class="thumb">
-					<a href=""><div class="overlay"></div>
-					<img src="imgs/herramientas-excel.png"></a>
-					<div class="iconos">
-						<a href=""><img src="imgs/facebook-icon.png"></a>
-						<a href=""><img src="imgs/twitter-icon.png"></a>
-					</div>
-				</div>
-				<h1>Steve Jobs</h1>
-				<p>Lorem ipsum dolor sit amet henu sohit gambran doisum. </p>
-			</div>
+			@elseif ($file->tarch_id === '4')
 			<div class="element enlace">
+			@endif
 				<div class="thumb">
-					<a href=""><div class="overlay"></div>
-					<img src="imgs/imagen.png"></a>
+					@if ($file->tarch_id === '1')
+					<a href="uploads/{{ $file->linkArch }}" rel="prettyPhoto">
+					@elseif ($file->tarch_id === '2')
+					<a href="{{ $file->linkArch }}" rel="prettyPhoto">
+					@elseif ($file->tarch_id === '3')
+					<a href="download/{{ $file->linkArch }}">
+					@elseif ($file->tarch_id === '4')
+					<a href="{{ $file->linkArch }}" target="_blank">
+					@endif
+						<div class="overlay"></div>
+						<img src="previews/{{ $file->imgArch }}">
+					</a>
 					<div class="iconos">
-						<a href=""><img src="imgs/facebook-icon.png"></a>
-						<a href=""><img src="imgs/twitter-icon.png"></a>
+						<a class="fb-share" href="{{ URL::action('HomeController@inspiracion') }}/{{ $file->id }}"><img src="imgs/facebook-icon.png"></a>
+						<a class="tw-share" href="{{ URL::action('HomeController@inspiracion') }}/{{ $file->id }}"><img src="imgs/twitter-icon.png"></a>
 					</div>
 				</div>
-				<h1>Steve Jobs</h1>
-				<p>Lorem ipsum dolor sit amet henu sohit gambran doisum. </p>
+				<h1>{{ $file->nomArch }}</h1>
+				<p>{{ $file->descArch }}</p>
 			</div>
-			<div class="element ">
-				<div class="thumb">
-					<a href=""><div class="overlay"></div>
-					<img src="imgs/imagen.png"></a>
-					<div class="iconos">
-						<a href=""><img src="imgs/facebook-icon.png"></a>
-						<a href=""><img src="imgs/twitter-icon.png"></a>
-					</div>
-				</div>
-				<h1>Steve Jobs</h1>
-				<p>Lorem ipsum dolor sit amet henu sohit gambran doisum. </p>
-			</div>
-			<div class="element imagen">
-				<div class="thumb">
-					<a href=""><div class="overlay"></div>
-					<img src="imgs/imagen.png"></a>
-					<div class="iconos">
-						<a href=""><img src="imgs/facebook-icon.png"></a>
-						<a href=""><img src="imgs/twitter-icon.png"></a>
-					</div>
-				</div>
-				<h1>Steve Jobs</h1>
-				<p>Lorem ipsum dolor sit amet henu sohit gambran doisum. </p>
-			</div>
+		@endforeach
 		</div>
 	</div>
 	<div id="over"><a href=""><img src="imgs/top.png"></a></div>

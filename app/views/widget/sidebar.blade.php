@@ -1,9 +1,9 @@
 <div id="sidebar">
 	<div id="perfil">
-		<img src="">
+		<img src="{{ $profile_image }}">
 		<div id="info">
-			<p>Nombre Apellido</p>
-			<p><a href="">/perfil</a></p>
+			<p>{{ $name }}</p>
+			<p><a href="http://facebook.com/{{ $username }}" target="_blank">/{{ $username }}</a></p>
 		</div>
 	</div>
 	<div id="menu">
@@ -16,7 +16,7 @@
 		<a href="{{ URL::action('HomeController@getIpad') }}" class="menu-item"><img src="imgs/menu3.png"></a>
 	</div>
 	<ul>
-		<li style="background:url(imgs/equipo-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@equipo') }}">Me falta: idea / equipo</a></li>
+		<li id="opt-equipo" style="background:url(imgs/equipo-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@equipo') }}">Me falta: idea / equipo</a></li>
 		<li style="background:url(imgs/ayuda-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@faq') }}">Ayuda</a></li>
 		<li style="background:url(imgs/volver-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@premio') }}">Volver</a></li>
 	</ul>

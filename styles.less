@@ -216,25 +216,26 @@ body{
 					-webkit-padding-start: 0px;
 					padding: 1px 10px;
 					li{
+						cursor: pointer;
 						display: inline;
 						padding-right:14px; 
 						margin: 5px;
 						a{text-decoration: none;}
 						&.rojo{
 							a{color: #f00;}
-							background: url(imgs/check-rojo.png)  right center no-repeat
+							&.active{background: url(imgs/check-rojo.png)  right center no-repeat}
 						}
 						&.azul{
 							a{color: #0054ff;}
-							background: url(imgs/check-azul.png)  right center no-repeat
+							&.active{background: url(imgs/check-azul.png)  right center no-repeat}
 						}
 						&.verde{
 							a{color: #16ee00;}
-							background: url(imgs/check-verde.png)  right center no-repeat
+							&.active{background: url(imgs/check-verde.png)  right center no-repeat}
 						}
 						&.amarillo{
 							a{color: #eea800;}
-							background: url(imgs/check-amarillo.png)  right center no-repeat
+							&.active{background: url(imgs/check-amarillo.png)  right center no-repeat}
 						}
 					}
 				}
@@ -271,9 +272,9 @@ body{
 					margin: 0px;
 					padding: 0px;
 					width: 693px;
-
-					#q{
-						background: #eaeaeb url(imgs/dropdown-rojo.png) 658px 15px no-repeat;margin-top: 15px;
+					.question{
+						background: #eaeaeb url(imgs/dropdown-rojo.png) 658px 15px no-repeat;
+						margin-top: 15px;
 						padding: 8px 15px 8px 40px;
 						font-size: 17px;
 						font-weight: bold;
@@ -282,7 +283,7 @@ body{
 							background: #d0cfce;
 						}
 					}
-					#a{
+					.answer{
 						background: #f8f8f6;
 						padding: 15px 25px;
 						margin: 0px;

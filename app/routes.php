@@ -19,19 +19,5 @@ Route::get('ipad', 'HomeController@getIpad');
 Route::post('ipad', 'HomeController@postIpad');
 Route::get('equipo', 'HomeController@equipo');
 Route::get('faq', 'HomeController@faq');
-Route::get('test', function(){
-	require 'vendor/facebook/src/facebook.php';
-
-    $facebook = new Facebook(array(
-      'appId'  => '531422446938110',
-      'secret' => '89f52f80fbb6f576677f67906c784171',
-    ));
-
-    // Get User ID
-    if( $user = $facebook->getUser() ){
-    	print_r($user);
-    }else{
-    	$url = $facebook->getLoginUrl();
-    	print_r($url);
-    }
-});
+Route::get('download/{file}', 'HomeController@download');
+Route::post('feed', 'HomeController@feed');
