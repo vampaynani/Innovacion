@@ -2,7 +2,7 @@
 
 class Archivo extends Eloquent {
 	protected $table = 'archivos';
-	protected $fillable = array('nomArch', 'linkArch', 'tarch_id');
+	protected $fillable = array('nomArch', 'imgArch', 'linkArch', 'descArch', 'subcat_id', 'tarch_id');
 	public function tarchivo(){
 		return $this->belongsTo('TipoArchivo', 'tarch_id');
 	}

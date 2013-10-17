@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es_MX">
 <head>
 	<meta charset="utf-8">
-	<title>Santander</title>
+	<title>Premio a la Innovación Santander</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet/less" type="text/css" href="styles.less" />
 	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />

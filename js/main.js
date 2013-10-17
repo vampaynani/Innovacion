@@ -17,7 +17,7 @@ $(document).on('ready', function(){
      				else top.location.href = 'http://facebook.com/151897861495761';
      			});
    			}
-		}, {scope:'email,user_likes'});
+		}, {scope:'email, user_likes'});
 	});
     $('#opt-equipo').on('click', function(e){
         e.preventDefault();

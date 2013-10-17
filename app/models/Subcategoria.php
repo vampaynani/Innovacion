@@ -1,6 +1,6 @@
 <?php
 
-class SubCategoria extends Eloquent {
+class Subcategoria extends Eloquent {
 	protected $table = 'subcategorias';
 	protected $fillable = array('nomSub', 'colorSub', 'descSub', 'categoria_id');
 	public $timestamps = false;

@@ -21,3 +21,4 @@ Route::get('equipo', 'HomeController@equipo');
 Route::get('faq', 'HomeController@faq');
 Route::get('download/{file}', 'HomeController@download');
 Route::post('feed', 'HomeController@feed');
+Route::controller('admin', 'AdminController');
