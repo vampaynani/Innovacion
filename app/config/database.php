@@ -53,7 +53,7 @@ return array(
 		),
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'		=> 'mysql51-037.wc2.dfw1.stabletransit.com',
+			'host'		=> '72.3.204.172',
 			'database'  => '426893_dbinnovacion',
 			'username'  => '426893_usrino',
 			'password'  => '3845#Lm31',
