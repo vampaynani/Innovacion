@@ -9,38 +9,39 @@ html{
 
 }
 body{
+	background: #ccc;
  	color: #555759;
 	#container{
 		display: block;
 		position: relative;
-		width: 1366px;
-		height: 768px !important;
+		width: 960px;
+		height: 540px !important;
 		overflow: hidden;
 		background: url(imgs/background.jpg) no-repeat;
-		border-top: 6px solid #e00109; 
+		border-top: 3px solid #e00109; 
 		#sidebar{
 			background: url(imgs/background-sidebar.png) no-repeat;
 			height: 100%;
-			width: 320px;
+			width: 225px;
 			float: left;
 			#perfil{
-				height: 90px !important;
-				padding: 43px 10px 27px 22px;
+				height: 80px !important;
+				padding: 33px 10px 0px 15px;
 					img{
-						width: 90px;
-						height: 90px;
+						width: 62px;
+						height: 62px;
 						background: #000;
 						float: left;
 						.roundcorners(50%);
 					}
 				#info{
-					padding: 16px 0 0 100px;
+					padding: 11px 0 0 70px;
 					p{
-						font-size:23px;
+						font-size:15px;
 						font-weight: bold;
 						margin: 0px;
 						a{
-							font-size: 17px;
+							font-size: 13px;
 							font-weight: normal;
 							color: #f00;
 							text-decoration: none;
@@ -50,8 +51,8 @@ body{
 			}
 			#menu{				
 				clear: both;
-				padding:0px 14px;
-				background: url(imgs/menu2-lineas.png) 53px 118px no-repeat;
+				padding:0px 2px;
+				background: url(imgs/menu2-lineas.png) 33px 82px no-repeat;
 				a{
 					opacity: 0.5;
 					display: block;
@@ -60,10 +61,10 @@ body{
 						opacity: 1;
 					}
 					&.menu-item{
-						padding: 20px 0 0px 20px;
+						padding: 15px 0 0px 20px;
 					}
 					&.submenu-item{
-						padding: 11px 0 0 50px;
+						padding: 6px 0 0 42px;
 
 					}
 				}
@@ -73,9 +74,10 @@ body{
 				width: 92%;
 				-webkit-padding-start: 0px;
 				padding-start: 0px;
-				padding-left: 10px;
+				padding-left: 5px;
+				font-size: 11px;
 				li{
-					padding:11px 0 11px 40px; 
+					padding:7px 0 7px 30px; 
 					border-top: solid 1px #e1dedb;
 					a{
 						text-decoration: none;
@@ -87,21 +89,22 @@ body{
 				}
 			}
 			#buscar{
-				width: 255px;
+				width: 176px;
 				height: 14px;
 				margin-top: 10px;
 				position: absolute;
 				bottom:10px;
-				padding: 13px 13px 13px 36px;
+				padding: 8px 8px 8px 30px;
+				font-size: 12px;
 				background: #fff url(imgs/lupa.png) 13px no-repeat;
 			}
 		}
 		#content{
-			width: 1010px;
-			height: 637px;
+			width: 710px;
+			height: 450px;
 			float: left;
-			padding-left: 36px;
-			padding-top: 130px;
+			padding-left: 25px;
+			padding-top: 90px;
 		 
 			position: relative;
 			&.premio{
@@ -119,39 +122,39 @@ body{
 			}
 			&.faq{
 					background: url(imgs/header-07.png) top no-repeat;
-					width: 1010;
-					height: 594px;
- 					padding-top: 175px;
+					width: 710px;
+					height: 415px;
+ 					padding-top: 125px;
 			}
 			&.equipo{
 					background: url(imgs/header-06.png) top no-repeat;
 					text-align: center;
-					width: 974px;
-					height: 572px;
-					padding: 195px 36px 0 36px;
+					width: 681px;
+					height: 400px;
+					padding: 136px 25px 0 25px;
 					position: relative;
 			}
 			&.herramientas{
 					background: url(imgs/header-03.png) top no-repeat;
-					padding-top: 155px;
+					padding-top: 108px;
 				.grid{
-					height: 530px;
+					height: 371px;
 				}
 			}
  			.grid{
 				overflow-y: auto;
-				height: 555px;
+				height: 388px;
 				.element{
-					margin: 20px 35px 15px 0;
-					width: 200px;
-					height: 330px;
+					margin: 14px 24px 10px 0;
+					width: 140px;
+					height: 231px;
 					float: left;
 					h1{
-						font-size: 16px;
-						margin: 20px 0;
+						font-size: 11px;
+						margin: 14px 0;
  					}
 					p{
-						font-size: 12px;
+						font-size: 9px;
  					}
 					.overlay{
 						opacity: 0;
@@ -172,54 +175,54 @@ body{
 						background: url(imgs/overlay-imagen.png);
 					}
 					.thumb{
-						width: 189px;
-						height: 189px;
+						width: 132px;
+						height: 132px;
  						background: url(imgs/cuadrito.png) no-repeat; 
-						padding: 6px;
+						padding: 4.2px;
 						position: relative;
 						.overlay{
-							width: 187px;
-							height: 187px;
+							width: 131px;
+							height: 131px;
 							overflow: hidden;
 							position: absolute;							
 						}
 						.tipo{
 							position: absolute;
-							bottom: 6px;
-							left: 10px;
+							bottom: 4.2px;
+							left: 7px;
 						}
 						.iconos{
 							position: absolute;
-							bottom: 8px;
-							right: 8px;
+							bottom: 5px;
+							right: 5.6px;
 							background:#fff;
-							padding: 5px 5px 0 5px;
+							padding: 2px 3px 0 4px;
 						}
 					}
 				}
 			}
 			#filtro{
-				padding-bottom: 20px;
+				padding-bottom: 14px;
 				p{
-					font-size: 27px;
-					margin-left: -20px;
-					margin-bottom: 8px;
+					font-size: 18.9px;
+					margin-left: -14px;
+					margin-bottom: 5.6px;
 					img{
-						margin-right: 5px;
-						margin-bottom: 3px;
+						margin-right: 3.5px;
+						margin-bottom: 2px;
 					}
 				}
 				ul{
 					background: rgba(150, 150, 150, 0.1);
-				
+					font-size: 13px;
 					display: inline;
 					-webkit-padding-start: 0px;
-					padding: 1px 10px;
+					padding: 1px 7px;
 					li{
 						cursor: pointer;
 						display: inline;
-						padding-right:14px; 
-						margin: 5px;
+						padding-right:10px; 
+						margin: 3.5px;
 						a{text-decoration: none;}
 						&.rojo{
 							a{color: #f00;}
@@ -241,29 +244,29 @@ body{
 				}
 			}
 			#faq{
-				height: 594px;
- 				padding: 0 262px 0 91px;
+				height: 415px;
+ 				padding: 0 183px 0 63px;
 
 				overflow-y: auto; 
 
 				h1{
 					font-weight: bold;
-					font-size: 22px;
+					font-size: 15px;
 					color: #e00109;
 				}
 				dl{
 					dd{
 						background: #f8f8f6;
 						margin: 0px;
-						padding: 15px 20px;
-						font-size: 13px;
+						padding: 10.5px 14px;
+						font-size: 9px;
  					}
 					dt{
 						background: #d0cfce;
-						background: #eaeaeb url(imgs/dropdown-rojo.png) 658px 15px no-repeat;
-						margin-top: 15px;
-						padding: 8px 15px;
-						font-size: 17px;
+						background: #eaeaeb url(imgs/dropdown-rojo.png) 460px 10px no-repeat;
+						margin-top: 10.5px;
+						padding: 5.6px 10.5px;
+						font-size: 12px;
 						font-weight: bold;
 						cursor: pointer;
 					}
@@ -271,33 +274,35 @@ body{
 				ol{
 					margin: 0px;
 					padding: 0px;
-					width: 693px;
+
+					width: 485px;
+
 					.question{
-						background: #eaeaeb url(imgs/dropdown-rojo.png) 658px 15px no-repeat;
-						margin-top: 15px;
-						padding: 8px 15px 8px 40px;
-						font-size: 17px;
+						background: #eaeaeb url(imgs/dropdown-rojo.png) 460px 10px no-repeat;margin-top: 15px;
+						padding: 5.6px 10.5px 5.6px 28px;
+						font-size: 11.9px;
 						font-weight: bold;
 						cursor: pointer;
 						&.active, &:hover{
-							background: #d0cfce;
+							background: #d0cfce  url(imgs/dropdown-rojo.png) 460px 10px no-repeat;margin-top: 15px;;
 						}
 					}
 					.answer{
 						background: #f8f8f6;
-						padding: 15px 25px;
+						padding: 8px 15.5px;
+
 						margin: 0px;
-						font-size: 13px;
+						font-size: 9.1px;
 
 					}
 				}
 			}
 			#ipad{
-				width: 742px;
-				height: 486px;
+				width: 516px;
+				height: 340px;
 				position:absolute;
-				top: 207px;
-				left: 93px;
+				top: 144px;
+				left: 65px;
 				&.pregunta{
 					background: url(imgs/ipad-pregunta.png);
 				}
@@ -306,42 +311,42 @@ body{
 				}
 				form{
 					position: absolute;
-					top:145px;
-					left:15px;
- 					width: 452px;
-					height: 250px;
+					top:101px;
+					left:10.5px;
+ 					width: 316px;
+					height: 175px;
 					overflow: hidden;
 
 					#texto{
 						background: url(imgs/cuadrito-form.png) no-repeat;
-						padding: 8px;
-						height: 180px;
+						padding: 5.6px;
+						height: 126px;
 
 					}
 					textarea{
 						background: #ebf2f1;
 						border: none;
-						width: 423px;
-						height: 152px;
-						padding: 10px;
+						width: 296px;
+						height: 106px;
+						padding: 7px;
 					}
 					.enviarBtn{
 						background: url(imgs/ipad-enviar-btn.png) no-repeat;
-						width:134px;
-						height: 48px;
+						width:93px;
+						height: 33px;
 						border: 0px;
 						position: absolute;
-						top: 200px;
-						left: 300px;
+						top: 140px;
+						left: 210px;
 
 					}
 				}
 			}
 			#legal{
 				position: absolute;
-				top: 735px;
-				left: 97px;
-				font-size: 10px;
+				top: 514px;
+				left: 68px;
+				font-size: 7px;
 				a{
 					color: #f00;
 					text-decoration: none;
@@ -351,15 +356,15 @@ body{
 		#over{
 			position: absolute;
 			top: 0px;
-			right: 20px;
+			right: 14px;
 		}
 		#like{
 			height: 100%;
 			background: url(imgs/like.png) no-repeat;
 			a{
 				position: absolute;
-				top: 540px;
-				left:432px;
+				top: 366px;
+				left: 300px;
 			}
 		}
 	}
