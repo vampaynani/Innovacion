@@ -2,22 +2,29 @@
 
 class HomeController extends BaseController{
 	protected $layout = 'layout.site';
+	protected $mail;
+	
 	public function __construct(){
 		require 'vendor/facebook/src/facebook.php';
 		$facebook = new Facebook(array(
 	      'appId'  => '531422446938110',
 	      'secret' => '89f52f80fbb6f576677f67906c784171',
 	    ));
-
+	    
 	    // Get User ID
 	    if( $user = $facebook->getUser() ){
 	        $img = "https://graph.facebook.com/". $user ."/picture?width=200&height=200";
 	        $me = $facebook->api("/$user");
-
+	        $this->mail = $me['email'];
+	        
 	        View::share('profile_image', $img);
 	        View::share('username', $me['username']);
 	        View::share('name', $me['name']);
+	        Session::put('fb', $user);
+	    }else{
+		    Session::forget('fb');
 	    }
+	    $this->beforeFilter('facebook', array('except' => 'welcome'));
 	}
 	public function welcome(){
 		return $this->layout->content = View::make('index');
@@ -25,32 +32,35 @@ class HomeController extends BaseController{
 	public function premio(){
 		return $this->layout->content = View::make('premio');
 	}
-	public function inspiracion(){
+	public function inspiracion($id = null){
 		$subcatIDs = array();
 		$subcats = Categoria::find(3)->subcats()->get();
 		foreach($subcats as $subcat){
 			array_push($subcatIDs, $subcat->id);
 		}
+		$file = ($id != null) ? Archivo::where('id','=',$id)->first() : null;
 		$files = Archivo::whereIn('subcat_id', $subcatIDs)->get();
-		return $this->layout->content = View::make('inspiracion', array('subcats'=>$subcats, 'files'=>$files));
+		return $this->layout->content = View::make('inspiracion', array('file'=>$file, 'subcats'=>$subcats, 'files'=>$files));
 	}
-	public function herramientas(){
+	public function herramientas($id = null){
 		$subcatIDs = array();
 		$subcats = Categoria::find(2)->subcats()->get();
 		foreach($subcats as $subcat){
 			array_push($subcatIDs, $subcat->id);
 		}
+		$file = ($id != null) ? Archivo::where('id','=',$id)->first() : null;
 		$files = Archivo::whereIn('subcat_id', $subcatIDs)->get();
-		return $this->layout->content = View::make('herramientas', array('subcats'=>$subcats, 'files'=>$files));
+		return $this->layout->content = View::make('herramientas', array('file'=>$file, 'subcats'=>$subcats, 'files'=>$files));
 	}
-	public function documentacion(){
+	public function documentacion($id = null){
 		$subcatIDs = array();
 		$subcats = Categoria::find(1)->subcats()->get();
 		foreach($subcats as $subcat){
 			array_push($subcatIDs, $subcat->id);
 		}
+		$file = ($id != null) ? Archivo::where('id','=',$id)->first() : null;
 		$files = Archivo::whereIn('subcat_id', $subcatIDs)->get();
-		return $this->layout->content = View::make('documentacion', array('subcats'=>$subcats, 'files'=>$files));
+		return $this->layout->content = View::make('documentacion', array('file'=>$file, 'subcats'=>$subcats, 'files'=>$files));
 	}
 	public function feed(){
 		if(Input::has('subcats')){
@@ -63,8 +73,16 @@ class HomeController extends BaseController{
 		return $this->layout->content = View::make('ipad');
 	}
 	public function postIpad(){
-		return $this->layout->content = View::make('ipad_response');
-	}
+		if(Input::has('message')){
+			$carta = new Carta;
+			$carta->email = $this->mail;
+			$carta->compromiso = Input::get('message');
+			$carta->save();
+			return $this->layout->content = View::make('ipad_response');	
+		}else{
+			return $this->layout->content = View::make('ipad_response');	
+		}
+	}	
 	public function equipo(){
 		return $this->layout->content = View::make('equipo');
 	}

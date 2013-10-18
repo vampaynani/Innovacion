@@ -2,10 +2,10 @@
 <html lang="es_MX">
 <head>
 	<meta charset="utf-8">
-	<title>Premio a la Innovación Santander</title>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-	<link rel="stylesheet/less" type="text/css" href="styles.less" />
-	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+	<title>Premio a la Innovaci&oacute;n Santander</title>
+	<link rel="stylesheet" type="text/css" href="{{ Request::root() }}/css/normalize.css" />
+	<link rel="stylesheet/less" type="text/css" href="{{ Request::root() }}/styles.less" />
+	<link rel="stylesheet" href="{{ Request::root() }}/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -34,8 +34,8 @@
 		@yield('content')
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/less-1.4.1.min.js" type="text/javascript"></script>
-	<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/main.js" type="text/javascript"></script>
+	<script src="{{ Request::root() }}/js/less-1.4.1.min.js" type="text/javascript"></script>
+	<script src="{{ Request::root() }}/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ Request::root() }}/js/main.js" type="text/javascript"></script>
 </body>
 </html>

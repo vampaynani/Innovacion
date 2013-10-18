@@ -12,9 +12,9 @@
 */
 Route::get('/', 'HomeController@welcome');
 Route::get('premio', 'HomeController@premio');
-Route::get('inspiracion', 'HomeController@inspiracion');
-Route::get('herramientas', 'HomeController@herramientas');
-Route::get('documentacion', 'HomeController@documentacion');
+Route::get('inspiracion/{id?}', 'HomeController@inspiracion');
+Route::get('herramientas/{id?}', 'HomeController@herramientas');
+Route::get('documentacion/{id?}', 'HomeController@documentacion');
 Route::get('ipad', 'HomeController@getIpad');
 Route::post('ipad', 'HomeController@postIpad');
 Route::get('equipo', 'HomeController@equipo');

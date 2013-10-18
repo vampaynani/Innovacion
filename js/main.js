@@ -1,8 +1,34 @@
+var Globals = {
+	path: window.location.protocol+"//"+window.location.hostname+window.location.pathname,
+	base: 'http://b3app.me/innovacion/'
+}
 $(document).on('ready', function(){
-    $("a[rel^='prettyPhoto']").prettyPhoto({
+    $("a[rel^='imgSlide']").prettyPhoto({
         theme: 'dark_rounded',
-        deeplinking: true,
+        deeplinking: false,
         social_tools: ''
+    });
+    $("a[rel^='vidSlide']").prettyPhoto({
+        theme: 'dark_rounded',
+        deeplinking: false,
+        social_tools: ''
+    });
+    $("a[rel^='linkSlide']").prettyPhoto({
+        theme: 'dark_rounded',
+        deeplinking: false,
+        social_tools: ''
+    });
+    if($('#file_url')){
+    	if($('#file_url').hasClass('download')) location.href = $('#file_url').attr('href');
+		else $('#file_url').trigger('click');    
+    }
+    $('.fb-share').on('click', function( e ){
+    	e.preventDefault();
+    	fbPublish( $(this).attr('href') );
+    });
+    $('.tw-share').on('click', function( e ){
+    	e.preventDefault();
+    	twPublish( $(this).attr('href') );
     });
 	$('#facebook-like').on('click', function( e ){
 		e.preventDefault();
@@ -49,6 +75,18 @@ $(document).on('ready', function(){
         $('#faq ol .answer').hide('slow');
         $('#faq ol .answer').eq(index/2).show('slow');
     }
+    function getFeed(){
+    	var subcat;
+    	$('#filtro li').each(function(index){
+    		subcat = $(this).children().data('id');
+    		if($(this).hasClass('active')){
+	    		$('.'+subcat).show('slow');
+    		}else{
+	    		$('.'+subcat).hide('slow');
+    		}
+    	});
+    }
+    /*
     function getFeed(){
         subcats = new Array();
         subs = $('#filtro').find('li.active');
@@ -104,4 +142,12 @@ $(document).on('ready', function(){
             });
         });
     }
+    */
+    function fbPublish(href){
+    	console.log(Globals.base+href);
+    	window.open('http://www.facebook.com/sharer.php?u='+href, 'Compartir en Facebook', 'width=692, height=330');
+	}
+	function twPublish(href){
+		window.open('https://twitter.com/share?url='+href, 'Compartir en Twitter', 'width=692, height=330');
+	}
 });
