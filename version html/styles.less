@@ -1,0 +1,451 @@
+p{
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-start: 0;
+}
+html{
+
+}
+@ancho:960px; //cambiar para probar dif resolucion
+@alto:@ancho / 1.74;
+body{
+ 	color: #555759;
+ 	background: #ccc;
+	#container{
+		display: block;
+		position: relative;
+		width: @ancho;
+		height: @alto !important;
+		overflow: hidden;
+		background: url(imgs/background.jpg) no-repeat;
+		background-size: cover;
+		border-top: 6px solid #e00109; 
+		#sidebar{
+			background: url(imgs/background-sidebar.png) no-repeat;
+			background-size: cover;
+			height: 100%;
+			width: 24%; // width: 320px;
+			float: left;
+			#perfil{
+				height: 21% !important;
+				padding: 0 6% 0 6%;
+				#imagen{			
+					float: left;
+					height: 100%;			
+					width: 30%;
+					display: table;
+					img{
+						width: 100% !important;
+						height: 4rem;
+						background: #000;
+						display: inline-block;	
+						.roundcorners(50%);
+					}
+				}
+				span{
+					display: table-cell;
+    				vertical-align: middle;					
+				}
+				#info{
+					display: table;
+					height: 100%;			
+
+					width: 67%;
+					float: left;
+					padding-left: 3%; 
+					//padding: 16px 0 0 100px;
+					p{
+						font-size:1rem;//font-size:23px;
+						font-weight: bold;
+						margin: 0px;
+						a{
+							font-size: 17px;
+							font-weight: normal;
+							color: #f00;
+							text-decoration: none;
+						} 
+					}
+				}
+			}
+			#menu{				
+				clear: both;
+				padding:0px 14px;
+				#submenu{
+					background: url(imgs/menu2-lineas.png) 20% center no-repeat;
+					background-size: auto 80%;
+
+				}
+				a{
+					opacity: 0.5;
+					display: block;
+
+					&.active, &:hover{
+						opacity: 1;
+					}
+					&.menu-item{
+						padding: 1rem 0 0px 0;
+						img{
+							width: 60%;
+						}
+					}
+					&.submenu-item{
+						padding: 0.5rem 0 0 0;
+						margin-left: 24%;
+						img{
+							width: 80%;
+						}
+					}
+				}
+			}
+			ul{
+				list-style: none;
+				width: 92%;
+				-webkit-padding-start: 0px;
+				padding-start: 0px;
+				padding-left: 10px;
+				font-size: 0.8rem;
+				li{
+					padding:3% 0 3% 40px; 
+					border-top: solid 1px #e1dedb;
+					a{
+						text-decoration: none;
+						color: #6c6f71;
+						&:hover, &.active{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+			#buscar{
+				width: 18%;
+				height: 14px;
+				margin-top: 10px;
+				position: absolute;
+				bottom:10px;
+				padding: 13px 13px 13px 36px;
+				background: #fff url(imgs/lupa.png) 13px no-repeat;
+			}
+		}
+		#content{
+			width: 74%; //width: 1010px;
+			height:83%;//height: 637px;
+			float: left;
+			padding-left: 2%;//padding-left: 36px;
+			padding-top: 10%; //padding-top: 130px;
+			position: relative;
+
+			&.premio{
+					background: url(imgs/header-01.png) top no-repeat;
+					background-size: contain;
+					img{
+						width: 100%;
+					}
+			}
+			&.inspiracion{
+					background: url(imgs/header-02.png) top no-repeat;
+					background-size: contain;
+			}
+			&.documentacion{
+					background: url(imgs/header-04.png) top no-repeat;
+					background-size: contain;
+			}
+			&.ipad{
+					background: url(imgs/header-05.png) top no-repeat;
+					//padding-top: 185px;
+					background-size: contain;
+			}
+			&.faq{
+					background: url(imgs/header-07.png) top no-repeat;
+					width: 74%; //width: 1010px;
+					height: 75.5%;
+					padding-top: 14%;
+					background-size: contain;
+			}
+			&.equipo{
+					background: url(imgs/header-06.png) top no-repeat;
+					text-align: center;
+					width: 71%;
+					height: 75%;
+					padding-top: 14%;
+					position: relative;
+					background-size: contain;
+			}
+			&.herramientas{
+					background: url(imgs/header-03.png) top no-repeat;
+					padding-top: 12%;
+					background-size: contain;
+				.grid{
+					height: 80%;
+				}
+			}
+ 			.grid{
+				overflow-y: auto;
+				height: 85%;
+				.element{
+					margin: 1rem 3% 0 0;
+					width: 20%;
+					height: 60%;
+					overflow: hidden;
+					//height: 330px;
+					float: left;
+					padding: 1%;
+					background: url(imgs/cuadrito.png) no-repeat; 
+ 					background-size: contain;
+					h1{
+						font-size: 0.8rem;
+						margin: 1rem 0;
+ 					}
+					p{
+						font-size: 0.7rem;
+ 					}
+					.overlay{
+						opacity: 0;
+						
+					}
+					.overlay:hover{
+						opacity: 1;
+					}
+					&.video .overlay{
+						background: url(imgs/overlay-video.png);
+						
+					}
+					&.descargar .overlay{
+						background: url(imgs/overlay-descargar.png);						width: 100%;
+
+					}
+					&.enlace .overlay{
+						background: url(imgs/overlay-enlace.png);						width: 100%;
+
+					}
+					&.imagen .overlay{
+						background: url(imgs/overlay-imagen.png);						width: 100%;
+
+					}
+					.thumb{
+						overflow: hidden;
+						width: 100%;
+						position: relative;
+						.overlay{
+							background-size: cover;
+							width: 100%;
+							padding-bottom: 100%;
+							overflow: hidden;
+							position: absolute;							
+						}
+						.tipo{
+							position: absolute;
+							bottom: 6px;
+							left: 10px;
+						}
+						.iconos{
+							position: absolute;
+							bottom: 2%;
+							right: 0px;
+							background:#fff;
+							padding: 5px 5px 0 5px;
+							img{
+								width: auto;
+							}
+						}
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+			#filtro{
+				height: 15%;
+				//padding-bottom: 1rem;
+				p{
+					font-size: 1.3rem;
+					margin-left: -20px;
+					margin-bottom: 8px;
+					img{
+						margin-right: 5px;
+						margin-bottom: 3px;
+					}
+				}
+				ul{
+					background: rgba(150, 150, 150, 0.1);
+					display: inline;
+					-webkit-padding-start: 0px;
+					padding: 1px 1%;
+					li{
+						display: inline;
+						padding-right:14px; 
+						margin: 5px;
+						a{
+							font-size: 0.8rem;
+							text-decoration: none;
+						}
+						&.rojo{
+							a{color: #f00;}
+							background: url(imgs/check-rojo.png)  right center no-repeat
+						}
+						&.azul{
+							a{color: #0054ff;}
+							background: url(imgs/check-azul.png)  right center no-repeat
+						}
+						&.verde{
+							a{color: #16ee00;}
+							background: url(imgs/check-verde.png)  right center no-repeat
+						}
+						&.amarillo{
+							a{color: #eea800;}
+							background: url(imgs/check-amarillo.png)  right center no-repeat
+						}
+					}
+				}
+			}
+			#faq{
+				height: 100%;
+				padding-left: 6%;
+				padding-right: 20%;
+				overflow-y: auto; 
+
+				h1{
+					font-weight: bold;
+					font-size: 1.1rem;
+					color: #e00109;
+				}
+				dl{
+					dd{
+						background: #f8f8f6;
+						margin: 0px;
+						padding: 15px 20px;
+						font-size: 13px;
+ 					}
+					dt{
+						background: #d0cfce;
+						background: #eaeaeb url(imgs/dropdown-rojo.png) 658px 15px no-repeat;
+						margin-top: 15px;
+						padding: 8px 15px;
+						font-size: 17px;
+						font-weight: bold;
+						cursor: pointer;
+					}
+				}
+				ol{
+					margin: 0px;
+					padding: 0px;
+					width: 100%;
+
+					#q{
+						background: #eaeaeb url(imgs/dropdown-rojo.png) 98% center no-repeat;margin-top: 15px;
+						padding: 8px 15px 8px 40px;
+						font-size: 0.9rem;
+						font-weight: bold;
+						cursor: pointer;
+						&.active, &:hover{
+							background: #d0cfce url(imgs/dropdown-rojo.png) 98% center no-repeat;margin-top: 15px;
+
+						}
+					}
+					#a{
+						background: #f8f8f6;
+						padding: 15px 25px;
+						margin: 0px;
+						font-size: 0.7rem;
+
+					}
+				}
+			}
+			#ipad{
+				width:100%;//width: 742px;
+				height: 73%;
+				position:absolute;
+				top:26%;//top: 207px;
+				left: 6%;//93px;
+				&.pregunta{
+					background: url(imgs/ipad-pregunta.png) no-repeat;
+					background-size: contain;
+					width: 75%;
+				}
+				&.enviado{
+					background: url(imgs/ipad-enviado.png) no-repeat;
+					background-size: contain;
+					width: 75%;
+
+				}
+				form{
+					position: absolute;
+					top: 26%;
+					left: 1rem;
+ 					width: 60%;//width: 452px;
+					height: 50%;
+					overflow: hidden;
+
+					#texto{
+						background: url(imgs/cuadrito-form.png) no-repeat;
+						background-size: cover;
+						padding: 2%;
+						height: 68%;
+
+					}
+					textarea{
+						background: #ebf2f1;
+						border: none;
+						width: 100%;
+						height: 100%;//height: 152px;
+						//padding: 10px;
+					}
+					.enviarBtn{
+						background: url(imgs/ipad-enviar-btn.png) no-repeat;
+						width:30%;
+						background-size: contain;
+						height: 20%;
+						border: 0px;
+						position: absolute;
+						//top: 200px;
+						right:0px;
+						bottom:0px;
+
+					}
+				}
+			}
+			#legal{
+				position: absolute;
+				bottom: 1rem;
+				left: 3rem;
+				font-size: 0.7rem;
+				a{
+					color: #f00;
+					text-decoration: none;
+				}
+			}
+		}
+		#over{
+			position: absolute;
+			top: 0px;
+			right: 20px;
+			width: 14%;
+			img{
+				width: 100%;
+			}
+		}
+		#like{
+			height: 100%;
+			background: url(imgs/like.png) no-repeat;
+			background-size: contain;
+
+			a{
+				
+				width: 100%;
+				img{
+					position: absolute;
+					top:70%;//top: 540px;
+					left: 31%;
+					width: 36%;
+				}
+			}
+		}
+	}
+}
+
+.roundcorners (@radio){
+  border-radius: @radio;
+  -moz-border-radius: @radio;
+  -webkit-border-radius: @radio;
+}

@@ -1,9 +1,13 @@
 <div id="sidebar">
 	<div id="perfil">
-		<img src="{{ $profile_image }}">
+		<div id="imagen">
+			<span><img src="{{ $profile_image }}"></span>
+		</div>
 		<div id="info">
-			<p>{{ $name }}</p>
-			<p><a href="http://facebook.com/{{ $username }}" target="_blank">/{{ $username }}</a></p>
+			<span>
+				<p>{{ $name }}</p>
+				<p><a href="http://facebook.com/{{ $username }}" target="_blank">/{{ $username }}</a></p>
+			</span>
 		</div>
 	</div>
 	<div id="menu">
