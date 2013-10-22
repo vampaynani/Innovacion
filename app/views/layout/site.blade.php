@@ -32,6 +32,9 @@
 	</script>
 	<div id="container">
 		@yield('content')
+		<div id="legal">
+			<p>Todos los derechos reservados, Santander Universidades 2013 * Consulta <a href="">t&eacute;rminos y condiciones</a> y <a href="">bases legales.</a></p>
+		</div>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="{{ Request::root() }}/js/less-1.4.1.min.js" type="text/javascript"></script>
