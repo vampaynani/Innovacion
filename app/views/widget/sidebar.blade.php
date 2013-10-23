@@ -21,7 +21,7 @@
 	</div>
 	<ul>
 		<li id="opt-equipo" style="background:url({{ Request::root() }}/imgs/equipo-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@equipo') }}">Me falta: idea / equipo</a></li>
-		<li style="background:url({{ Request::root() }}/imgs/ayuda-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@faq') }}">Ayuda</a></li>
+		<li style="background:url({{ Request::root() }}/imgs/ayuda-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@faq') }}">Preguntas frecuentes</a></li>
 		<li style="background:url({{ Request::root() }}/imgs/volver-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@premio') }}">Volver</a></li>
 	</ul>
 	<!--<input type="text" id="buscar" placeholder="Buscar...">-->
