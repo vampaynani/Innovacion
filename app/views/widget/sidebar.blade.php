@@ -11,13 +11,33 @@
 		</div>
 	</div>
 	<div id="menu">
+		@if(Request::is('premio'))
 		<a href="{{ URL::action('HomeController@premio') }}" class="menu-item active"><img src="{{ Request::root() }}/imgs/menu1.png"></a>
+		@else
+		<a href="{{ URL::action('HomeController@premio') }}" class="menu-item"><img src="{{ Request::root() }}/imgs/menu1.png"></a>
+		@endif
 		<div id="submenu">
+			@if(Request::is('inspiracion'))
+			<a href="{{ URL::action('HomeController@inspiracion') }}" class="submenu-item active"><img src="{{ Request::root() }}/imgs/menu2-1.png"></a>
+			@else
 			<a href="{{ URL::action('HomeController@inspiracion') }}" class="submenu-item"><img src="{{ Request::root() }}/imgs/menu2-1.png"></a>
+			@endif
+			@if(Request::is('herramientas'))
+			<a href="{{ URL::action('HomeController@herramientas') }}" class="submenu-item active"><img src="{{ Request::root() }}/imgs/menu2-2.png"></a>
+			@else
 			<a href="{{ URL::action('HomeController@herramientas') }}" class="submenu-item"><img src="{{ Request::root() }}/imgs/menu2-2.png"></a>
+			@endif
+			@if(Request::is('documentacion'))
+			<a href="{{ URL::action('HomeController@documentacion') }}" class="submenu-item active"><img src="{{ Request::root() }}/imgs/menu2-3.png"></a>
+			@else
 			<a href="{{ URL::action('HomeController@documentacion') }}" class="submenu-item"><img src="{{ Request::root() }}/imgs/menu2-3.png"></a>
+			@endif
 		</div>
+		@if(Request::is('ipad'))
+		<a href="{{ URL::action('HomeController@getIpad') }}" class="menu-item active"><img src="{{ Request::root() }}/imgs/menu3.png"></a>
+		@else
 		<a href="{{ URL::action('HomeController@getIpad') }}" class="menu-item"><img src="{{ Request::root() }}/imgs/menu3.png"></a>
+		@endif
 	</div>
 	<ul>
 		<li id="opt-equipo" style="background:url({{ Request::root() }}/imgs/equipo-icon.png) left center no-repeat;"><a href="{{ URL::action('HomeController@equipo') }}">Me falta: idea / equipo</a></li>
