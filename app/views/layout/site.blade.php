@@ -2,7 +2,7 @@
 <html lang="es_MX">
 <head>
 	<meta charset="utf-8">
-	<title>Premio a la Innovaci&oacute;n Santander</title>
+	<title>Premio Santander a la Innovaci&oacute;n Empresarial</title>
 	<link rel="stylesheet" type="text/css" href="{{ Request::root() }}/css/normalize.css" />
 	<link rel="stylesheet/less" type="text/css" href="{{ Request::root() }}/styles.less" />
 	<link rel="stylesheet" href="{{ Request::root() }}/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />

@@ -45,12 +45,21 @@ $(document).on('ready', function(){
    			}
 		}, {scope:'email, user_likes'});
 	});
-    $('#opt-equipo').on('click', function(e){
+    $('#get-equipo').on('click', function(e){
         e.preventDefault();
         FB.ui({
             method: 'apprequests',
             message: 'Únete a mi equipo Santander'
         });
+    });
+    $('#get-idea').on('click', function(e){
+        e.preventDefault();
+        FB.ui({
+        	method: 'feed',
+        	link: 'http://b3app.me/innovacion',
+        	caption: 'Premio Santander a la innovación empresarial',
+        	description: ''
+        }, function(response){});
     });
     $('#filtro').on('click','a', function(e){
         e.preventDefault();
