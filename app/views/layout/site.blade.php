@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es_MX">
+<html lang="es">
 <head>
-	<meta charset="utf-8">
+	<meta charset="iso-8859-1">
 	<title>Premio Santander a la Innovaci&oacute;n Empresarial</title>
-	<link rel="stylesheet" type="text/css" href="{{ Request::root() }}/css/normalize.css" />
-	<link rel="stylesheet/less" type="text/css" href="{{ Request::root() }}/styles.less" />
-	<link rel="stylesheet" href="{{ Request::root() }}/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="{{ Request::root() }}/css/normalize.css" />
+	<link rel="stylesheet/less" href="{{ Request::root() }}/styles.less" />
+	<link rel="stylesheet" href="{{ Request::root() }}/css/prettyPhoto.css" media="screen" />
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -32,13 +32,25 @@
 	</script>
 	<div id="container">
 		@yield('content')
+		@if (!Request::is('/'))
+		<div id="over"><a href="http://www.premiosantander.com/premio2013/"><img src="{{ Request::root() }}/imgs/top.png"></a></div>
+		@endif
+		@if (!Request::is('/'))
 		<div id="legal">
-			<p>Todos los derechos reservados, Santander Universidades 2013 * Consulta <a href="">t&eacute;rminos y condiciones</a> y <a href="">bases legales.</a></p>
+		@else
+		<div id="legal" class="center">
+		@endif
+			<p>Todos los derechos reservados, Santander Universidades 2013 
+			@if (Request::is('ipad'))
+			* Consulta <a href="{{ URL::action('HomeController@terminos') }}">t&eacute;rminos y condiciones</a>
+			@endif
+			</p>
 		</div>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="{{ Request::root() }}/js/less-1.4.1.min.js" type="text/javascript"></script>
-	<script src="{{ Request::root() }}/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-	<script src="{{ Request::root() }}/js/main.js" type="text/javascript"></script>
+	<script src="{{ Request::root() }}/js/jquery-1.10.2.min.map"></script>
+	<script src="{{ Request::root() }}/js/jquery-1.10.2.min.js"></script>
+	<script src="{{ Request::root() }}/js/less-1.4.1.min.js"></script>
+	<script src="{{ Request::root() }}/js/jquery.prettyPhoto.js"></script>
+	<script src="{{ Request::root() }}/js/main.js"></script>
 </body>
 </html>
